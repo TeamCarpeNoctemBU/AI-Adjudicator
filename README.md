@@ -1,13 +1,37 @@
-# HackaccinoProject22
-Ok so we're making this project based on AI/ML where we will be using it to see if a person really has
-deserved what is coming for them from the DC
 
-we will use text testinomies from the accused, witness and the person who will adjudging the perps
+# The Cross Examiner (DC Judge)
 
-we will later go on to check if the accused's story matches up with that of the accounts and 
-see if it is consistent using a lie detector to fish out incosistencies and state them
+## Summary
 
-we will also set boundaries for what can be considered under the DC to be a punishable offence,
-and then based off of that we decide if they deserve punishment
+- An AI-based solution for looking at testimonials/accounts and generating inconsistencies between them.
+- A binary Judge, which tries to detect lies and provide a verdict for a given case.
 
-person can only backspace in word and cannot move to previous words
+## Components
+
+- A frontend application that lets admins open/close cases and lets users input their own testimonials when prompted. Sections include
+  - Case management
+  - Seperate Admin and Regular User roles
+
+- A backend web framework, complete with a database and an API that invokes the Natural Language processing AI.
+  - The Cross Examiner
+  - The Judge
+
+## The Application
+
+`// text related to frontend goes here.`
+
+## The Backend
+
+- ### The Cross Examiner
+
+The cross examiner will look at the testimonials provided by the following:
+
+- The Accused(s)
+- Witnesses (if any)
+- The Admin in charge
+
+It will then look at the texts provided by each, and find and line out inconsistencies. The administrator of the case will be displayed these, along with an option to ask for more testimonials *on the specific inconsistency*. When all inconsistencies are resolved, **The Judge** will be called in.
+
+- ### The Judge
+
+The Judge will look at the specific case and find if it classifies as a punishable offense based on provided context (such as a law database), and find out what specific offense the case lies under, if any. It will also suggest any disciplinary actions mentioned in the context provided. Of course, there will be an option to override the reparations if the need for it arises.
