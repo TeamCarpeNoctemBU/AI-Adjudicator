@@ -1,18 +1,11 @@
 
 # The Cross Examiner (DC Judge)
 
-<<<<<<< HEAD
 ## Summary
-=======
-we will later go on to check if the accused's story matches up with that of the accounts and 
-see if it is consistent using a lie detector to fish out incosistencies and state them, it will be 
-question based, and each time the field will be reset
->>>>>>> 012ab31c77c8c36c43694062b1688c60c430a212
 
 - An AI-based solution for looking at testimonials/accounts and generating inconsistencies between them.
 - A binary Judge, which tries to detect lies and provide a verdict for a given case.
 
-<<<<<<< HEAD
 ## Components
 
 - A frontend application that lets admins open/close cases and lets users input their own testimonials when prompted. Sections include
@@ -42,10 +35,3 @@ It will then look at the texts provided by each, and find and line out inconsist
 - ### The Judge
 
 The Judge will look at the specific case and find if it classifies as a punishable offense based on provided context (such as a law database), and find out what specific offense the case lies under, if any. It will also suggest any disciplinary actions mentioned in the context provided. Of course, there will be an option to override the reparations if the need for it arises.
-=======
-person can only backspace in word and cannot move to previous words
-
-decides if the person is guilty or no 
-
-complaints forum
->>>>>>> 012ab31c77c8c36c43694062b1688c60c430a212
