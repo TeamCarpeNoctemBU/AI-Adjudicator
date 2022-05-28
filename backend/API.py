@@ -8,7 +8,7 @@ app = Flask(__name__) #intance of our flask application
 #Route '/' to facilitate get request from our flutter app
 @app.route('/', methods = ['GET'])
 def index():
-    return jsonify({'greetings' : 'Hi! this is python'}) #returning key-value pair in json format
+    return jsonify({'greetings' : 'Welcome to the AI-Adjudicator'}) #returning key-value pair in json format
 
 
 if __name__ == "__main__":
