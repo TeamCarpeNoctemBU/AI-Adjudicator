@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
-import './Questions.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,32 +6,62 @@ void main() {
 
 class MyApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implementation createState
-    return MyAppState();
-  }
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('My Ok'),
-        ),
-        body: Column(
-          children: [
-            Question(
-              questions.elementAt(qIndex),
-            ),
-            RaisedButton(
-              child: Text('Ans 1'),
-              onPressed: q1A,
-            ),
-          ],
-        ),
+      theme: new ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        fontFamily: 'Comfortaa',
       ),
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.black,
+            centerTitle: true,
+            title: Text(
+              'AI-Adjudicator',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          body: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey)
+              ),
+              child: RaisedButton(
+                child: Text(
+                  'Review Case',
+                  style: TextStyle(fontSize: 30.0),
+                ),
+                color: Colors.black,
+                textColor: Colors.white,
+                onPressed: () {},
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey)
+              ),
+              child: RaisedButton(
+                child: Text(
+                  'Start New Case',
+                  style: TextStyle(fontSize: 30.0),
+                ),
+                color: Colors.black,
+                textColor: Colors.white,
+                onPressed: () {},
+              ),
+            ),
+          ]))),
     );
   }
 }
