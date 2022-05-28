@@ -9,6 +9,7 @@ void main() {
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
+  String greetings = '';
 
 @override
 Widget build(BuildContext context) {
