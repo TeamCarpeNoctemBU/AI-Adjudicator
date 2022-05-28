@@ -11,11 +11,6 @@ class FirstRoute extends StatelessWidget {
 
 @override
 Widget build(BuildContext context) {
-  Column(
-    children: [
-      Image.asset('assets/images/logo_but_sexy.png'),
-    ],
-  );
   return Scaffold(
     backgroundColor: Colors.black,
     appBar: AppBar(
@@ -30,6 +25,12 @@ Widget build(BuildContext context) {
             ),
     ),
     body: Center(
+      child: Column(
+        children: <Widget>[
+          Image.asset('assets/images/logo_but_sexy.png'),
+          Container(
+      margin: EdgeInsets.only(top: 250),
+      decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
       child: RaisedButton(
         child: const Text('Start New Case', style: TextStyle(
             fontFamily: 'Comfortaa',
@@ -45,6 +46,7 @@ Widget build(BuildContext context) {
           );
         },
       ),
+          ), ], ),
     ),
   );
 }}
