@@ -25,7 +25,7 @@ class CrossExam:
 
     def clean(self, text):
         # removes unnecessary punctuations and other human elements of the text.
-        text = re.sub('[0-9]+.\t' + '...','',str(text))
+        text = re.sub('[0-9]+.\t' + '...' + '"' + "'",'',str(text))
         text = re.sub('\n ','',str(text))
         text = re.sub('\n',' ',str(text))
         text = re.sub("'s",'',str(text))
