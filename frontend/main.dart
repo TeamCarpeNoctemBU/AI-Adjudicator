@@ -10,6 +10,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  void fn1(){
+    print('i got pressed');
+  }
+
+  void fn2(){
+    print('ouch');
+  }
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,37 +42,50 @@ class _MyAppState extends State<MyApp> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey)
-              ),
-              child: RaisedButton(
-                child: Text(
-                  'Review Case',
-                  style: TextStyle(fontSize: 30.0),
+                    Image.asset('assets/images/logo_but_sexy.png'),
+                // Container(
+                //   margin: EdgeInsets.only(top: 150.0),
+                //   decoration:
+                //   BoxDecoration(border: Border.all(color: Colors.grey)),
+                //   child: RaisedButton(
+                //     child: Text(
+                //       'Review Case',
+                //       style: TextStyle(fontSize: 30.0),
+                //     ),
+                //     color: Colors.black,
+                //     textColor: Colors.white,
+                //     onPressed: fn1,
+                //   ),
+                // ),
+                Container(
+                  margin: EdgeInsets.only(top: 200.0),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.grey)),
+                  child: RaisedButton(
+                    child: Text(
+                      'Start New Case',
+                      style: TextStyle(fontSize: 30.0),
+                    ),
+                    color: Colors.black,
+                    textColor: Colors.white,
+                    onPressed: () { _navigateToNextScreen(context);},
+                  ),
                 ),
-                color: Colors.black,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey)
-              ),
-              child: RaisedButton(
-                child: Text(
-                  'Start New Case',
-                  style: TextStyle(fontSize: 30.0),
-                ),
-                color: Colors.black,
-                textColor: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-          ]))),
+              ]))),
+    );
+  }
+}
+class NewScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('New Screen')),
+      body: Center(
+        child: Text(
+          'This is a new screen',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
     );
   }
 }

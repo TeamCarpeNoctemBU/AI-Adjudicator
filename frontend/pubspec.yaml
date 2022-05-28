@@ -56,6 +56,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/logo_but_sexy.png
 
     # To add assets to your application, add an assets section, like this:
     # assets:
@@ -77,8 +79,8 @@ flutter:
     - family: Comfortaa
       fonts:
         - asset: fonts/Comfortaa-Regular.ttf
-#        - asset: fonts/Comfortaa-Italic.ttf
-#          style: italic
+  #        - asset: fonts/Comfortaa-Italic.ttf
+  #          style: italic
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
