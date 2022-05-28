@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 void main() {
   runApp(const MaterialApp(
     home: FirstRoute(),
@@ -25,7 +26,14 @@ Widget build(BuildContext context) {
               'AI-Adjudicator',
               style: TextStyle(
                 fontFamily: 'Comfortaa',
-                  color: Colors.white
+                  color: Colors.white,
+                  onPressed: () async{
+                    final response = await http.get(' http://127.0.0.1:5000/');
+                    final decoded = json.decode(response.body) as Map<String, dynamic>;
+                    setState((){
+                      greetings = decoded['greetings'];
+            }
+          });
               ),
             ),
     ),
