@@ -76,7 +76,9 @@ class SecondRoute extends StatelessWidget {
           children: <Widget>[
             const Text('\nenrollment number', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
             Container(
+              // width: 100.0,
               child: TextField(
+                maxLength: 11,
                 style: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
                   textAlign: TextAlign.center,
                 decoration: InputDecoration(
@@ -86,8 +88,9 @@ class SecondRoute extends StatelessWidget {
                 // controller: fieldText,
               ),
             ),
-            Text('\ntestimony', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
+            Text('\ntestimony 1', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
             Container(
+              width: 350.0,
               child: TextField(
                 style: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
                 textAlign: TextAlign.center,
@@ -99,23 +102,51 @@ class SecondRoute extends StatelessWidget {
                 // controller: fieldText,
               ),
             ),
+            Text('\ntestimony 2', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
+            Container(
+              width: 350.0,
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                    hintText: 'enter the testimony',
+                    fillColor: Colors.grey, filled: true
+                ),
+                maxLines: null, autofocus: false,
+                // controller: fieldText,
+              ),
+            ),
+            Container(
+              child: RaisedButton(
+                child: const Text('\n+1', style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    color: Colors.redAccent,
+                    fontSize: 30.0
+                ),
+                ),
+                color: Colors.black,
+                onPressed: () {
+                  print('big working');
+                },
+              ),
+            ),
+            Container(
+              child: RaisedButton(
+                child: const Text('\nSubmit', style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    color: Colors.greenAccent,
+                    fontSize: 30.0
+                ),
+                ),
+                color: Colors.black,
+                onPressed: () {
+                  print('big working');
+                },
+              ),
+            ),
           ],
         ),
       ),
-      // Below is the button for previous page
-      // body: Center(
-      //   child: RaisedButton(
-      //     color: Colors.black,
-      //     onPressed: () {
-      //       Navigator.pop(context);
-      //     },
-      //     child: const Text('Go back!', style: TextStyle(
-      //         fontFamily: 'Comfortaa',
-      //         color: Colors.white
-      //     ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

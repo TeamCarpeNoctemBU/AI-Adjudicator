@@ -102,3 +102,17 @@
 //     );
 //   }
 // }
+// Below is the button for previous page
+// body: Center(
+//   child: RaisedButton(
+//     color: Colors.black,
+//     onPressed: () {
+//       Navigator.pop(context);
+//     },
+//     child: const Text('Go back!', style: TextStyle(
+//         fontFamily: 'Comfortaa',
+//         color: Colors.white
+//     ),
+//     ),
+//   ),
+// ),
