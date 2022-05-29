@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+
 void main() {
   runApp(const MaterialApp(
     home: FirstRoute(),
@@ -9,7 +8,6 @@ void main() {
 
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
-  String greetings = '';
 
 @override
 Widget build(BuildContext context) {
@@ -22,14 +20,7 @@ Widget build(BuildContext context) {
               'AI-Adjudicator',
               style: TextStyle(
                 fontFamily: 'Comfortaa',
-                  color: Colors.white,
-                  onPressed: () async{
-                    final response = await http.get(' http://127.0.0.1:5000/');
-                    final decoded = json.decode(response.body) as Map<String, dynamic>;
-                    setState((){
-                      greetings = decoded['greetings'];
-            }
-          });
+                  color: Colors.white
               ),
             ),
     ),
@@ -61,7 +52,11 @@ Widget build(BuildContext context) {
 }}
 
 class SecondRoute extends StatelessWidget {
+  // final fieldText = const TextEditingController();
   const SecondRoute({super.key});
+  // void clearText() {
+  //   fieldText.clear();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +69,37 @@ class SecondRoute extends StatelessWidget {
             color: Colors.white,
             fontSize: 20.0
         ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            const Text('\nenrollment number', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
+            Container(
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
+                  textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  hintText: 'enter the enrollment number',
+                  fillColor: Colors.grey, filled: true
+                ),
+                // controller: fieldText,
+              ),
+            ),
+            Text('\ntestimony', style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'Comfortaa'),),
+            Container(
+              child: TextField(
+                style: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                    hintText: 'enter the testimony',
+                    fillColor: Colors.grey, filled: true
+                ),
+                maxLines: null, autofocus: false,
+                // controller: fieldText,
+              ),
+            ),
+          ],
         ),
       ),
       // Below is the button for previous page
