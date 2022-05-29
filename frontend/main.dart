@@ -52,6 +52,13 @@ Widget build(BuildContext context) {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const SecondRoute()),
+            async{
+            final response = await http.get('http://127.0.0.1:5000/');
+            final decoded = json.decode(response.body) as Map<String, dynamic>;
+            setState((){
+              greetings = decoded['greetings'];
+            }
+          });
           );
         },
       ),
